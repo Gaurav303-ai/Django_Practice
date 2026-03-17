@@ -1,0 +1,46 @@
+Django file Notes here from basic to good level
+
+django 5.x
+WHAT is Django 5?
+
+Django is a high-level web framework written in python that encourages rapid development and 
+clean, pragmatic design.
+ 
+Django emphasizes reusabilty and don't repeat yourself(DRY) principal , which means it tries to keep your code simple and not repititive,
+
+It follows the Model View Template (MVT) architectural pattern .
+
+It was created on 2003 at Lawrence Journal World Newspaper.
+
+It wasreleased publicly under a BSD license in july 2005.
+
+In june 2008, it was announced that Django Software Foundation would maintiain DJANGO IN FUTURE.
+
+Features and Advantages of Django5?
+=>
+Built in Admin Interface
+ORM
+Authentication System
+Rapid Development
+Versatility
+Security
+
+---------------------------------------------------------------------
+To check django version in your pc type => django-admin --version
+ also check => python --version(3.10 minimum requirment), pip --version, 
+ 
+ How to Install django:
+step 1:
+  => create and activate ENV(Virtual Environment)(already built-in python 3.3+)
+
+    how to check run in cmd = python -m venv --help
+
+  we create it si that the every project created have their package seperated
+  ENV is just like a room and and each project store their package on their room so that it 
+  prevent collapse and our system is like a house and we create room using ENV
+                               OR
+  “Virtual Environments” allow Python packages to be installed in an isolated location for a particular application, rather than being installed globally.
+
+  run this command to create venv in you root project folder => python -m venv venv
+step 2: 
+  
