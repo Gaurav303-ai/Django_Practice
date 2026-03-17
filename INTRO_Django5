@@ -29,8 +29,8 @@ Security
 To check django version in your pc type => django-admin --version
  also check => python --version(3.10 minimum requirment), pip --version, 
  
- How to Install django:
-step 1:
+ How to Setup django project :
+
   => create and activate ENV(Virtual Environment)(already built-in python 3.3+)
 
     how to check run in cmd = python -m venv --help
@@ -42,5 +42,6 @@ step 1:
   “Virtual Environments” allow Python packages to be installed in an isolated location for a particular application, rather than being installed globally.
 
   run this command to create venv in you root project folder => python -m venv venv
-step 2: 
-  
+  => and activate this => using command venv\Scripts\activate
+  now create project => django-admin startproject myproject
+  => Virtual environment is usually created inside the project directory but separate from the project code.
