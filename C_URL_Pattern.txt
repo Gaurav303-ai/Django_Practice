@@ -1,0 +1,227 @@
+urlpatterns=> path('route', view, kwargs, name_function)
+ ✔ kwargs = optional
+✔ Used to pass fixed data
+✔ Mostly used in advanced cases
+for this urlpattern we must write function in this way 
+ 
+ def fun_name(req, **kwargs);
+ status = kwargs.get('status')
+ print(status)
+ return HttpResponse("testing")
+ Yes, kwargs is just a variable name and can be replaced with any valid identifier, but the same name must be used inside the function.
+
+CREATING DIFFERENT URL FILE IN EACH APP
+ make a new file in each app name url.py so that each 
+ folder have its own routing so it make the code seperate and 
+ clean 
+ write basic code 
+  from django.urls import admin
+
+  urlpattern =[
+    path()
+  ]
+
+
+  Great 🔥 — now you’re asking **real Django architecture**, not just basics. This is exactly how **professional projects** are structured.
+
+You want:
+👉 Each app should have **its own `urls.py`** (not everything in project root)
+
+Let’s do it step-by-step 👇
+
+---
+
+# 🧠 Why We Create Separate URL Files?
+
+In **Django**:
+
+❌ Bad practice:
+
+* All URLs in one file (`project/urls.py`)
+* Becomes messy for large apps
+
+✅ Good practice:
+
+* Each app handles its own URLs
+* Project just connects them
+
+---
+
+# 📂 Final Structure (Professional)
+
+```id="x7yygc"
+myproject/
+│
+├── manage.py
+├── myproject/
+│   └── urls.py        👈 main router
+│
+├── student/
+│   ├── views.py
+│   ├── urls.py        👈 app URLs
+│
+├── driver/
+│   ├── views.py
+│   ├── urls.py
+```
+
+---
+
+# 🚀 STEP 1: Create `urls.py` inside App
+
+Go to your app (example: `student`)
+
+Create file:
+
+```id="l2ubrr"
+student/urls.py
+```
+
+---
+
+# 🚀 STEP 2: Add URLs in App
+
+```python id="mtjvch"
+from django.urls import path
+from .views import home
+
+urlpatterns = [
+    path('', home),
+]
+```
+
+👉 `''` means:
+
+```id="4fw4n4"
+/student/
+```
+
+---
+
+# 🚀 STEP 3: Connect App URLs to Main URLs
+
+Open:
+
+📂 `myproject/urls.py`
+
+```python id="xyaq9c"
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('student/', include('student.urls')),
+]
+```
+
+---
+
+# 🔄 Flow Now
+
+User opens:
+
+```id="1ymcok"
+/student/
+```
+
+Flow:
+
+```text id="1y0m99"
+project urls.py → student.urls.py → views.py → response
+```
+
+---
+
+# 🔥 Example View
+
+```python id="6mkl6h"
+from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse("Student Home Page")
+```
+
+---
+
+# 🎯 Output
+
+Open:
+
+```id="s8g7k6"
+http://127.0.0.1:8000/student/
+```
+
+👉 You will see:
+
+```
+Student Home Page
+```
+
+---
+
+# ⚡ Important Concept: `include()`
+
+👉 This line is key:
+
+```python id="xhhq6o"
+include('student.urls')
+```
+
+Meaning:
+
+> “Go to student app and check its URLs”
+
+---
+
+# 🔥 Multiple Apps Example
+
+```python
+urlpatterns = [
+    path('student/', include('student.urls')),
+    path('driver/', include('driver.urls')),
+]
+```
+
+---
+
+# 🎓 Exam Answer (Very Important)
+
+> In Django, we can create a separate urls.py file for each app and include it in the main project urls.py using the include() function to maintain modularity and clean code structure.
+
+---
+
+# 💡 Real-World Insight (For Your TrackEase)
+
+You will use:
+
+* `/driver/` → driver app
+* `/owner/` → owner app
+* `/expense/` → expense app
+
+👉 Each with its own `urls.py`
+
+---
+
+# 🚀 Next Step (Highly Recommended)
+
+Now learn:
+
+👉 **Dynamic URLs**
+
+Example:
+
+```id="bd21rb"
+/student/101
+```
+
+👉 This is used in:
+
+* user IDs
+* orders
+* drivers
+
+---
+
+If you want, I’ll teach:
+
+👉 **Dynamic URL + how data comes into view (very powerful concept)**

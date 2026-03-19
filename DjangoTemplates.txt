@@ -1,0 +1,34 @@
+The Django template language¶
+This document explains the language syntax of the Django template system. If you’re looking for a more technical 
+perspective on how it works and how to extend it, see The Django template language: for Python programmers.
+
+Django’s template language is designed to strike a balance between power and ease. It’s designed to feel comfortable 
+to those used to working with HTML. If you have any exposure to other text-based template languages, such as Smarty or
+ Jinja2, you should feel right at home with Django’s templates.
+
+OFFICIAL DOCUMENTATION
+use this link to know more about Django Templates 
+link => https://docs.djangoproject.com/en/6.0/ref/templates/language/
+ Contents
+The Django template language
+Templates
+Variables
+Filters
+Tags
+Comments
+Template inheritance
+Template partials
+Basic syntax
+Fragment reuse
+Inline partials
+Accessing partials directly
+Context handling
+Automatic HTML escaping
+How to turn it off
+For individual variables
+For template blocks
+Notes
+String literals and automatic escaping
+Accessing method calls
+Custom tag and filter libraries
+Custom libraries and template inheritance

@@ -45,3 +45,17 @@ To check django version in your pc type => django-admin --version
   => and activate this => using command venv\Scripts\activate
   now create project => django-admin startproject myproject
   => Virtual environment is usually created inside the project directory but separate from the project code.
+
+
+  **
+  If You Want manage.py One Level Up (Optional Trick)
+You can create project like this:
+Django_Practice/
+│
+├── venv/          👈 virtual environment
+├── myproject/     👈 Django project
+└── manage.py
+run 
+django-admin startproject myproject .
+
+👉 This will place manage.py in current folder
