@@ -1,0 +1,36 @@
+ORM (Object-Relational Mapping) is a technique that lets you interact
+ with a database using Python code instead of SQL queries.
+Django ORM allows us to perform database operations using Python objects 
+instead of writing raw SQL queries
+
+Why we use ORM
+No need to write SQL
+Database independent (SQLite, MySQL, PostgreSQL)
+Cleaner & faster development
+Safer (prevents SQL injection)
+
+Database table → Python class (Model)
+Table row → Object
+Columns → Fields
+
+
+=>
+A model is a Python representation of a database table.
+
+👉 It defines:
+
+What data you store
+Structure of the table (columns/fields)
+
+=>
+A model class is the Python class you create by inheriting models.Model.
+
+👉 In the example:
+
+class Student(models.Model):
+Student = Model class
+It defines the structure of the database table
+
+"A model class in Django defines the structure of a database table.
+ It provides the schema, such as fields and their data types, and Django 
+ uses it to create the corresponding table
