@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Data</title>
+</head>
+<body>
+    <H1>All Data</H1>
+    {% if student %}
+       <h1>Student List</h1>
+       <ul>
+       {% for students in student %}
+       <li>{{students.name}}-{{students.roll}}</li>
+       {% endfor %}
+       </ul>
+       {% else %}
+       <h2>No d=Data</h2>
+         {% endif %}
+</body>
+</html>
