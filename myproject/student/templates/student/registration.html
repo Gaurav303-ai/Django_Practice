@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>student form</h1>
+    {% comment %} Complete form at once  {% endcomment %}
+    <form action="">
+      {% comment %} try form in different way {% endcomment %}
+
+      {% comment %}   <table>{{form.as_table}}</table> {% endcomment %}
+      {% comment %}   <ul>{{form.as_ul}}</ul> {% endcomment %}
+      {% comment %} you can also fetch specific data as {{form.first_name}} {% endcomment %}
+    {% comment %} <input type="submit" value="submit"> {% endcomment %}
+    </form>
+    {% comment %} form field by field  {% endcomment %}
+     {% comment %} <form action "">
+        Name: {{form.name}}
+        <br>
+        Email: {{form.email}}
+     </form> {% endcomment %}
+        {% comment %} form field by field with layout tag {% endcomment %}
+         {% comment %} <form action "">
+        {{form.name.label_tag}} {{form.name}}
+        <br>
+        {{form.email.label_tag}} {{form.email}}
+     </form> {% endcomment %}
+      <form action "">
+        <label for="{{form.name.id_for_label}}" class="">Name:</label>
+        <input class="" type="text" name="{{form.name.name}}" required id="{{form.name.id_for_label}}" value="{{form.name.value}}">
+
+        <label for="{{form.email.id_for_label}}" class="">email:</label>
+        <input class="" type="text" name="{{form.email.name}}" required id="{{form.email.id_for_label}}">
+     </form>
+</body>
+</html>
